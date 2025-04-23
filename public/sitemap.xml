@@ -2,8 +2,35 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/tags/aws/</loc>
+    <lastmod>2025-04-23T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/tags/devops/</loc>
-    <lastmod>2025-01-16T00:00:00+00:00</lastmod>
+    <lastmod>2025-04-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/golang/</loc>
+    <lastmod>2025-04-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/</loc>
+    <lastmod>2025-04-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/security/</loc>
+    <lastmod>2025-04-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/system-design/</loc>
+    <lastmod>2025-04-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/2025/04/system-design/</loc>
+    <lastmod>2025-04-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2025-04-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2025-04-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/web-servers/</loc>
+    <lastmod>2025-04-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/logging/</loc>
     <lastmod>2025-01-16T00:00:00+00:00</lastmod>
@@ -11,19 +38,10 @@
     <loc>http://localhost:1313/tags/observability/</loc>
     <lastmod>2025-01-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/</loc>
-    <lastmod>2025-01-16T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/software-engineering/</loc>
     <lastmod>2025-01-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2025-01-16T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/posts/2025/01/observability-logging/</loc>
-    <lastmod>2025-01-16T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/</loc>
     <lastmod>2025-01-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/2025/01/graphql-go-gqlgen/</loc>

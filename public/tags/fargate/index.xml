@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Fargate on Warren&#39;s Blog</title>
+    <link>http://localhost:1313/tags/fargate/</link>
+    <description>Recent content in Fargate on Warren&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 23 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/fargate/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Simplifying Container Deployments with AWS Fargate and ECS</title>
+      <link>http://localhost:1313/posts/2025/04/ecs-fargate/</link>
+      <pubDate>Wed, 23 Apr 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/2025/04/ecs-fargate/</guid>
+      
+      <description>&lt;p&gt;Deploying containerized applications in the cloud has never been easier, thanks to services like &lt;strong&gt;Amazon ECS&lt;/strong&gt; and &lt;strong&gt;AWS Fargate&lt;/strong&gt;. If you’re building and shipping Docker containers, these tools can help you focus more on your application and less on infrastructure.&lt;/p&gt;
+&lt;p&gt;In this post, we’ll take a quick look at what ECS and Fargate are, how they fit together, and why they might be a great fit for your next project.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

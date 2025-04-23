@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Web Servers on Warren&#39;s Blog</title>
+    <link>http://localhost:1313/tags/web-servers/</link>
+    <description>Recent content in Web Servers on Warren&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 23 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/web-servers/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>System Design for a Go Web App on AWS</title>
+      <link>http://localhost:1313/posts/2025/04/system-design/</link>
+      <pubDate>Wed, 23 Apr 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/2025/04/system-design/</guid>
+      
+      <description>&lt;h1 id=&#34;system-design-for-a-go-web-app-on-aws&#34;&gt;System Design for a Go Web App on AWS&lt;/h1&gt;
+&lt;p&gt;Building and deploying a Go web application on AWS is more than just spinning up a server and pointing a domain. In this post, we’ll walk through a real-world-ready system design with a focus on IAM, Security Groups, inter-service communication, and replication. Let’s break it down from DNS to database — the secure and scalable way.&lt;/p&gt;
+&lt;h2 id=&#34;application-recap&#34;&gt;Application Recap&lt;/h2&gt;
+&lt;p&gt;We’re working with a Go web server exposing an HTTP API. Think &lt;code&gt;net/http&lt;/code&gt;, &lt;code&gt;chi&lt;/code&gt;, or &lt;code&gt;gin&lt;/code&gt;. It talks to a database, serves some static files, and might upload images or documents.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

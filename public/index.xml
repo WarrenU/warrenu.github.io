@@ -6,7 +6,33 @@
     <description>Recent content on Warren&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 16 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 23 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Simplifying Container Deployments with AWS Fargate and ECS</title>
+      <link>http://localhost:1313/posts/2025/04/ecs-fargate/</link>
+      <pubDate>Wed, 23 Apr 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/2025/04/ecs-fargate/</guid>
+      
+      <description>&lt;p&gt;Deploying containerized applications in the cloud has never been easier, thanks to services like &lt;strong&gt;Amazon ECS&lt;/strong&gt; and &lt;strong&gt;AWS Fargate&lt;/strong&gt;. If you’re building and shipping Docker containers, these tools can help you focus more on your application and less on infrastructure.&lt;/p&gt;
+&lt;p&gt;In this post, we’ll take a quick look at what ECS and Fargate are, how they fit together, and why they might be a great fit for your next project.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>System Design for a Go Web App on AWS</title>
+      <link>http://localhost:1313/posts/2025/04/system-design/</link>
+      <pubDate>Tue, 22 Apr 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/2025/04/system-design/</guid>
+      
+      <description>&lt;h1 id=&#34;a-simple-system-design-for-go-apps-on-aws&#34;&gt;A Simple System Design for Go Apps on AWS&lt;/h1&gt;
+&lt;p&gt;Deploying a Go application on AWS doesn’t have to be complex. In this post, we’ll walk through a simplified system design using common AWS services. If you’re building a basic web API or microservice in Go, this is a solid starting point for going from local development to a cloud deployment.&lt;/p&gt;
+&lt;h2 id=&#34;-what-are-we-building&#34;&gt;🧠 What Are We Building?&lt;/h2&gt;
+&lt;p&gt;A basic Go web API that:&lt;/p&gt;</description>
+      
+    </item>
+    
     <item>
       <title>Understanding Logging and Observability in Modern Applications</title>
       <link>http://localhost:1313/posts/2025/01/observability-logging/</link>
