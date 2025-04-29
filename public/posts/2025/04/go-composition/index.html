@@ -3,22 +3,22 @@
 <meta http-equiv="content-type" content="text/html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title itemprop="name">System Design for a Go Web App on AWS | Warren&#39;s Blog</title>
-<meta property="og:title" content="System Design for a Go Web App on AWS | Warren&#39;s Blog" />
-<meta name="twitter:title" content="System Design for a Go Web App on AWS | Warren&#39;s Blog" />
-<meta itemprop="name" content="System Design for a Go Web App on AWS | Warren&#39;s Blog" />
-<meta name="application-name" content="System Design for a Go Web App on AWS | Warren&#39;s Blog" />
+<title itemprop="name">Go Favors Composition Over Inheritance | Warren&#39;s Blog</title>
+<meta property="og:title" content="Go Favors Composition Over Inheritance | Warren&#39;s Blog" />
+<meta name="twitter:title" content="Go Favors Composition Over Inheritance | Warren&#39;s Blog" />
+<meta itemprop="name" content="Go Favors Composition Over Inheritance | Warren&#39;s Blog" />
+<meta name="application-name" content="Go Favors Composition Over Inheritance | Warren&#39;s Blog" />
 <meta property="og:site_name" content="" />
 
-<meta name="description" content="">
-<meta itemprop="description" content="" />
-<meta property="og:description" content="" />
-<meta name="twitter:description" content="" />
+<meta name="description" content="A quick example of how Go replaces inheritance with composition and interfaces.">
+<meta itemprop="description" content="A quick example of how Go replaces inheritance with composition and interfaces." />
+<meta property="og:description" content="A quick example of how Go replaces inheritance with composition and interfaces." />
+<meta name="twitter:description" content="A quick example of how Go replaces inheritance with composition and interfaces." />
 
 <meta property="og:locale" content="en-us" />
 <meta name="language" content="en-us" />
 
-  <link rel="alternate" hreflang="en" href="https://warrenu.github.io/posts/2025/04/system-design/" title="" />
+  <link rel="alternate" hreflang="en" href="https://warrenu.github.io/posts/2025/04/go-composition/" title="" />
 
 
 
@@ -29,9 +29,9 @@
     
 
     <meta property="og:type" content="article" />
-    <meta property="og:article:published_time" content=2025-04-22T00:00:00Z />
-    <meta property="article:published_time" content=2025-04-22T00:00:00Z />
-    <meta property="og:url" content="https://warrenu.github.io/posts/2025/04/system-design/" />
+    <meta property="og:article:published_time" content=2025-04-29T00:00:00Z />
+    <meta property="article:published_time" content=2025-04-29T00:00:00Z />
+    <meta property="og:url" content="https://warrenu.github.io/posts/2025/04/go-composition/" />
 
     
     <meta property="og:article:author" content="Warren U" />
@@ -46,16 +46,16 @@
     {
         "@context": "http://schema.org",
         "@type": "Article",
-        "headline": "System Design for a Go Web App on AWS",
+        "headline": "Go Favors Composition Over Inheritance",
         "author": {
         "@type": "Person",
         "name": ""
         },
-        "datePublished": "2025-04-22",
-        "description": "",
-        "wordCount":  415 ,
+        "datePublished": "2025-04-29",
+        "description": "A quick example of how Go replaces inheritance with composition and interfaces.",
+        "wordCount":  142 ,
         "mainEntityOfPage": "True",
-        "dateModified": "2025-04-22",
+        "dateModified": "2025-04-29",
         "image": {
         "@type": "imageObject",
         "url": ""
@@ -71,34 +71,31 @@
 <meta name="generator" content="Hugo 0.139.4">
 
     
-    <meta property="og:url" content="https://warrenu.github.io/posts/2025/04/system-design/">
+    <meta property="og:url" content="https://warrenu.github.io/posts/2025/04/go-composition/">
   <meta property="og:site_name" content="Warren&#39;s Blog">
-  <meta property="og:title" content="System Design for a Go Web App on AWS">
-  <meta property="og:description" content="A Simple System Design for Go Apps on AWS Deploying a Go application on AWS doesn’t have to be complex. In this post, we’ll walk through a simplified system design using common AWS services. If you’re building a basic web API or microservice in Go, this is a solid starting point for going from local development to a cloud deployment.
-🧠 What Are We Building? A basic Go web API that:">
+  <meta property="og:title" content="Go Favors Composition Over Inheritance">
+  <meta property="og:description" content="A quick example of how Go replaces inheritance with composition and interfaces.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2025-04-22T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-04-22T00:00:00+00:00">
+    <meta property="article:published_time" content="2025-04-29T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-04-29T00:00:00+00:00">
     <meta property="article:tag" content="Golang">
-    <meta property="article:tag" content="Aws">
-    <meta property="article:tag" content="System Design">
-    <meta property="article:tag" content="Devops">
-    <meta property="article:tag" content="Web Servers">
+    <meta property="article:tag" content="Composition">
+    <meta property="article:tag" content="Inheritance">
+    <meta property="article:tag" content="Interfaces">
 
 
     
     
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="System Design for a Go Web App on AWS">
-  <meta name="twitter:description" content="A Simple System Design for Go Apps on AWS Deploying a Go application on AWS doesn’t have to be complex. In this post, we’ll walk through a simplified system design using common AWS services. If you’re building a basic web API or microservice in Go, this is a solid starting point for going from local development to a cloud deployment.
-🧠 What Are We Building? A basic Go web API that:">
+  <meta name="twitter:title" content="Go Favors Composition Over Inheritance">
+  <meta name="twitter:description" content="A quick example of how Go replaces inheritance with composition and interfaces.">
 
 
     
 
-    <link rel="canonical" href="https://warrenu.github.io/posts/2025/04/system-design/">
+    <link rel="canonical" href="https://warrenu.github.io/posts/2025/04/go-composition/">
     <link href="/style.min.16c30450e4889813e122deeb8ce7a3a05246cbabb09662db22d93993735c043c.css" rel="stylesheet">
     <link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
 
@@ -192,77 +189,55 @@ stroke-linejoin="round" class="feather feather-home">
     <main class="page-content" aria-label="Content">
         <article>
             <header class="header">
-                <h1 class="header-title">System Design for a Go Web App on AWS</h1>
+                <h1 class="header-title">Go Favors Composition Over Inheritance</h1>
                 
                 
                 
                 <div class="post-meta">
-                    <time datetime="2025-04-22T00:00:00&#43;00:00" itemprop="datePublished"> Apr 22, 2025 </time>
+                    <time datetime="2025-04-29T00:00:00&#43;00:00" itemprop="datePublished"> Apr 29, 2025 </time>
                 </div>
                 
             </header>
             
             <div class="page-content">
-                <h1 id="a-simple-system-design-for-go-apps-on-aws">A Simple System Design for Go Apps on AWS</h1>
-<p>Deploying a Go application on AWS doesn’t have to be complex. In this post, we’ll walk through a simplified system design using common AWS services. If you’re building a basic web API or microservice in Go, this is a solid starting point for going from local development to a cloud deployment.</p>
-<h2 id="-what-are-we-building">🧠 What Are We Building?</h2>
-<p>A basic Go web API that:</p>
-<ul>
-<li>Accepts requests from clients (like browsers or Postman)</li>
-<li>Reads/writes from a database</li>
-<li>Optionally uploads files (like a user avatar)</li>
-</ul>
-<h2 id="-high-level-architecture">🗺️ High-Level Architecture</h2>
-<ol>
-<li><strong>Client</strong> → DNS (via Route 53)</li>
-<li><strong>Route 53</strong> → Load Balancer (ALB)</li>
-<li><strong>Load Balancer</strong> → Go app running in a container (Fargate)</li>
-<li><strong>Go app</strong> → Database (RDS)</li>
-<li><strong>Go app</strong> → Storage (S3)</li>
-<li><strong>Secrets and logs</strong> managed by Secrets Manager and CloudWatch</li>
-</ol>
-<h2 id="-aws-services-used">🧰 AWS Services Used</h2>
-<ul>
-<li><strong>Route 53</strong> – for managing your domain and routing traffic</li>
-<li><strong>ACM (Certificate Manager)</strong> – to get an HTTPS certificate for secure traffic</li>
-<li><strong>ALB (Application Load Balancer)</strong> – to distribute incoming traffic to your app</li>
-<li><strong>ECS Fargate</strong> – to run your Go app in containers without managing servers</li>
-<li><strong>Amazon RDS</strong> – to store structured data (PostgreSQL or MySQL)</li>
-<li><strong>Amazon S3</strong> – for storing files like images or PDFs</li>
-<li><strong>Secrets Manager</strong> – for storing credentials (for example., DB passwords)</li>
-<li><strong>CloudWatch</strong> – for logs and basic monitoring</li>
-</ul>
-<h2 id="-basic-security-setup">🔐 Basic Security Setup</h2>
-<ul>
-<li><strong>Security Groups</strong> – control which services can talk to each other (for example., only the ALB can reach your app; only your app can reach the database)</li>
-<li><strong>IAM Roles</strong> – assign fine-grained permissions (for example., app can read from S3, but not write)</li>
-</ul>
-<h2 id="-deployment-flow">📦 Deployment Flow</h2>
-<ol>
-<li>You write your Go app and build a Docker container.</li>
-<li>Push the container to <strong>ECR</strong> (Elastic Container Registry).</li>
-<li>Deploy it to <strong>ECS Fargate</strong>, connected to a <strong>Load Balancer</strong>.</li>
-<li>Route DNS traffic to the Load Balancer using <strong>Route 53</strong>.</li>
-<li>Use <strong>ACM</strong> to secure the site with HTTPS.</li>
-</ol>
-<h2 id="-simple-example-in-practice">💡 Simple Example in Practice</h2>
-<p>Let’s say a user visits <code>https://myapp.com/upload</code>:</p>
-<ol>
-<li><strong>Route 53</strong> resolves the domain.</li>
-<li><strong>ALB</strong> receives the HTTPS request and forwards it to your app.</li>
-<li><strong>Go app</strong> handles the request, stores a file in <strong>S3</strong>, and writes info to <strong>RDS</strong>.</li>
-<li>Response goes back to the user.</li>
-</ol>
-<p>All traffic is secure (TLS), and permissions are tightly scoped.</p>
-<h2 id="-recap">✅ Recap</h2>
-<p>This setup gives you:</p>
-<ul>
-<li>A production-ready app stack</li>
-<li>Scalability with ECS Fargate</li>
-<li>Secure storage and secrets</li>
-<li>No servers to manage!</li>
-</ul>
-<p>You can build on top of this as your app grows — adding caching, queues, CI/CD, etc.</p>
+                <p>Go doesn’t use traditional inheritance like many OOP languages AND that’s by design.</p>
+<p>Instead, Go encourages <strong>composition</strong> and <strong>interfaces</strong>, which often lead to simpler, more modular code. Here&rsquo;s a quick example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Define a behavior
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Notifier</span> <span style="color:#66d9ef">interface</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">Notify</span>()
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Provide the behavior via a concrete type
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">EmailNotifier</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">Email</span> <span style="color:#66d9ef">string</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">e</span> <span style="color:#a6e22e">EmailNotifier</span>) <span style="color:#a6e22e">Notify</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Sending email to:&#34;</span>, <span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">Email</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Compose the behavior into another struct
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">User</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">Name</span> <span style="color:#66d9ef">string</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">EmailNotifier</span> <span style="color:#75715e">// embedded
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">user</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">User</span>{
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">Name</span>:          <span style="color:#e6db74">&#34;Warren&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">EmailNotifier</span>: <span style="color:#a6e22e">EmailNotifier</span>{<span style="color:#a6e22e">Email</span>: <span style="color:#e6db74">&#34;warren@example.com&#34;</span>},
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;User:&#34;</span>, <span style="color:#a6e22e">user</span>.<span style="color:#a6e22e">Name</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">user</span>.<span style="color:#a6e22e">Notify</span>() <span style="color:#75715e">// User &#34;inherits&#34; Notify through embedding
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span></code></pre></div><p>Instead of subclassing, we <strong>embed</strong> behavior directly and rely on interfaces to model capabilities. This pattern helps avoid deep inheritance trees and keeps your codebase flexible.</p>
+<hr>
+<p>Do you prefer this over traditional inheritance?</p>
 
             </div>
         </article></main>

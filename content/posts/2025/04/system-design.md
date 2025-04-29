@@ -14,7 +14,7 @@ A basic Go web API that:
 
 - Accepts requests from clients (like browsers or Postman)
 - Reads/writes from a database
-- Optionally uploads files (e.g. user avatars)
+- Optionally uploads files (like a user avatar)
 
 ## 🗺️ High-Level Architecture
 
@@ -33,13 +33,13 @@ A basic Go web API that:
 - **ECS Fargate** – to run your Go app in containers without managing servers
 - **Amazon RDS** – to store structured data (PostgreSQL or MySQL)
 - **Amazon S3** – for storing files like images or PDFs
-- **Secrets Manager** – for storing credentials (e.g., DB passwords)
+- **Secrets Manager** – for storing credentials (for example., DB passwords)
 - **CloudWatch** – for logs and basic monitoring
 
 ## 🔐 Basic Security Setup
 
-- **Security Groups** – control which services can talk to each other (e.g., only the ALB can reach your app; only your app can reach the database)
-- **IAM Roles** – assign fine-grained permissions (e.g., app can read from S3, but not write)
+- **Security Groups** – control which services can talk to each other (for example., only the ALB can reach your app; only your app can reach the database)
+- **IAM Roles** – assign fine-grained permissions (for example., app can read from S3, but not write)
 
 ## 📦 Deployment Flow
 
