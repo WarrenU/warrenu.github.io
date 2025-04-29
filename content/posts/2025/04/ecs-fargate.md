@@ -4,7 +4,7 @@ date: 2025-04-23
 description: "Learn how to run containerized applications without managing servers using Amazon ECS and AWS Fargate."
 tags: ["aws", "ecs", "fargate", "containers", "serverless"]
 categories: ["DevOps", "Cloud"]
-draft: false
+draft: true
 ---
 
 Deploying containerized applications in the cloud has never been easier, thanks to services like **Amazon ECS** and **AWS Fargate**. If you’re building and shipping Docker containers, these tools can help you focus more on your application and less on infrastructure.
@@ -92,5 +92,3 @@ You can use the AWS CLI or Terraform to set this up, but at a high level:
 If you're already in the AWS ecosystem and want a simple way to run containers without diving into EC2 or Kubernetes, **Fargate with ECS is a powerful combo**. It helps teams ship faster with fewer infrastructure headaches—exactly what you want in 2025.
 
 ---
-
-*Questions or want a deeper dive on setup or CI/CD integration? Drop a comment or reach out!*

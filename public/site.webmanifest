@@ -1,7 +1,7 @@
 {
     "name": "Warren's Blog",
     "short_name": "Warren's Blog",
-    "start_url": "http://localhost:1313/",
+    "start_url": "https://warrenu.github.io/",
     "theme_color": "#434648",
     "background_color": "#ffffff",
     "display": "standalone",

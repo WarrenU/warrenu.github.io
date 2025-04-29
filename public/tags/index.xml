@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Warren&#39;s Blog</title>
-    <link>http://localhost:1313/tags/</link>
+    <link>https://warrenu.github.io/tags/</link>
     <description>Recent content in Tags on Warren&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 23 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 22 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://warrenu.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Aws</title>
-      <link>http://localhost:1313/tags/aws/</link>
-      <pubDate>Wed, 23 Apr 2025 00:00:00 +0000</pubDate>
+      <link>https://warrenu.github.io/tags/aws/</link>
+      <pubDate>Tue, 22 Apr 2025 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/aws/</guid>
+      <guid>https://warrenu.github.io/tags/aws/</guid>
       
       <description></description>
       
@@ -20,10 +20,10 @@
     
     <item>
       <title>Devops</title>
-      <link>http://localhost:1313/tags/devops/</link>
-      <pubDate>Wed, 23 Apr 2025 00:00:00 +0000</pubDate>
+      <link>https://warrenu.github.io/tags/devops/</link>
+      <pubDate>Tue, 22 Apr 2025 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/devops/</guid>
+      <guid>https://warrenu.github.io/tags/devops/</guid>
       
       <description></description>
       
@@ -31,21 +31,10 @@
     
     <item>
       <title>Golang</title>
-      <link>http://localhost:1313/tags/golang/</link>
-      <pubDate>Wed, 23 Apr 2025 00:00:00 +0000</pubDate>
+      <link>https://warrenu.github.io/tags/golang/</link>
+      <pubDate>Tue, 22 Apr 2025 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/golang/</guid>
-      
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Security</title>
-      <link>http://localhost:1313/tags/security/</link>
-      <pubDate>Wed, 23 Apr 2025 00:00:00 +0000</pubDate>
-      
-      <guid>http://localhost:1313/tags/security/</guid>
+      <guid>https://warrenu.github.io/tags/golang/</guid>
       
       <description></description>
       
@@ -53,10 +42,10 @@
     
     <item>
       <title>System Design</title>
-      <link>http://localhost:1313/tags/system-design/</link>
-      <pubDate>Wed, 23 Apr 2025 00:00:00 +0000</pubDate>
+      <link>https://warrenu.github.io/tags/system-design/</link>
+      <pubDate>Tue, 22 Apr 2025 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/system-design/</guid>
+      <guid>https://warrenu.github.io/tags/system-design/</guid>
       
       <description></description>
       
@@ -64,10 +53,10 @@
     
     <item>
       <title>Web Servers</title>
-      <link>http://localhost:1313/tags/web-servers/</link>
-      <pubDate>Wed, 23 Apr 2025 00:00:00 +0000</pubDate>
+      <link>https://warrenu.github.io/tags/web-servers/</link>
+      <pubDate>Tue, 22 Apr 2025 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/web-servers/</guid>
+      <guid>https://warrenu.github.io/tags/web-servers/</guid>
       
       <description></description>
       
@@ -75,10 +64,10 @@
     
     <item>
       <title>Logging</title>
-      <link>http://localhost:1313/tags/logging/</link>
+      <link>https://warrenu.github.io/tags/logging/</link>
       <pubDate>Thu, 16 Jan 2025 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/logging/</guid>
+      <guid>https://warrenu.github.io/tags/logging/</guid>
       
       <description></description>
       
@@ -86,10 +75,10 @@
     
     <item>
       <title>Observability</title>
-      <link>http://localhost:1313/tags/observability/</link>
+      <link>https://warrenu.github.io/tags/observability/</link>
       <pubDate>Thu, 16 Jan 2025 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/observability/</guid>
+      <guid>https://warrenu.github.io/tags/observability/</guid>
       
       <description></description>
       
@@ -97,10 +86,10 @@
     
     <item>
       <title>Software Engineering</title>
-      <link>http://localhost:1313/tags/software-engineering/</link>
+      <link>https://warrenu.github.io/tags/software-engineering/</link>
       <pubDate>Thu, 16 Jan 2025 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/software-engineering/</guid>
+      <guid>https://warrenu.github.io/tags/software-engineering/</guid>
       
       <description></description>
       
@@ -108,10 +97,10 @@
     
     <item>
       <title>Best Practices</title>
-      <link>http://localhost:1313/tags/best-practices/</link>
+      <link>https://warrenu.github.io/tags/best-practices/</link>
       <pubDate>Thu, 19 Dec 2024 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/best-practices/</guid>
+      <guid>https://warrenu.github.io/tags/best-practices/</guid>
       
       <description></description>
       
@@ -119,10 +108,10 @@
     
     <item>
       <title>Data Integrity</title>
-      <link>http://localhost:1313/tags/data-integrity/</link>
+      <link>https://warrenu.github.io/tags/data-integrity/</link>
       <pubDate>Thu, 19 Dec 2024 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/data-integrity/</guid>
+      <guid>https://warrenu.github.io/tags/data-integrity/</guid>
       
       <description></description>
       
@@ -130,10 +119,10 @@
     
     <item>
       <title>Database</title>
-      <link>http://localhost:1313/tags/database/</link>
+      <link>https://warrenu.github.io/tags/database/</link>
       <pubDate>Thu, 19 Dec 2024 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/database/</guid>
+      <guid>https://warrenu.github.io/tags/database/</guid>
       
       <description></description>
       
@@ -141,10 +130,10 @@
     
     <item>
       <title>Django</title>
-      <link>http://localhost:1313/tags/django/</link>
+      <link>https://warrenu.github.io/tags/django/</link>
       <pubDate>Thu, 19 Dec 2024 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/django/</guid>
+      <guid>https://warrenu.github.io/tags/django/</guid>
       
       <description></description>
       
@@ -152,10 +141,10 @@
     
     <item>
       <title>Productivity</title>
-      <link>http://localhost:1313/tags/productivity/</link>
+      <link>https://warrenu.github.io/tags/productivity/</link>
       <pubDate>Thu, 19 Dec 2024 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/productivity/</guid>
+      <guid>https://warrenu.github.io/tags/productivity/</guid>
       
       <description></description>
       
@@ -163,10 +152,10 @@
     
     <item>
       <title>Remote Work</title>
-      <link>http://localhost:1313/tags/remote-work/</link>
+      <link>https://warrenu.github.io/tags/remote-work/</link>
       <pubDate>Thu, 19 Dec 2024 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/remote-work/</guid>
+      <guid>https://warrenu.github.io/tags/remote-work/</guid>
       
       <description></description>
       
@@ -174,10 +163,10 @@
     
     <item>
       <title>Restoration</title>
-      <link>http://localhost:1313/tags/restoration/</link>
+      <link>https://warrenu.github.io/tags/restoration/</link>
       <pubDate>Thu, 19 Dec 2024 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/restoration/</guid>
+      <guid>https://warrenu.github.io/tags/restoration/</guid>
       
       <description></description>
       
@@ -185,10 +174,10 @@
     
     <item>
       <title>Work-Life Balance</title>
-      <link>http://localhost:1313/tags/work-life-balance/</link>
+      <link>https://warrenu.github.io/tags/work-life-balance/</link>
       <pubDate>Thu, 19 Dec 2024 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/tags/work-life-balance/</guid>
+      <guid>https://warrenu.github.io/tags/work-life-balance/</guid>
       
       <description></description>
       
