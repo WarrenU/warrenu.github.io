@@ -5,11 +5,11 @@ theme = "hugo-blog-awesome"
 enableEmoji = true
 
 [menu]
-  [[menu.main]]
-  identifier = "resume"
-  name = "Resume"
-  url = "/resume/"  # Point to a custom page
-  weight = 10
+  # [[menu.main]]
+  # identifier = "resume"
+  # name = "Resume"
+  # url = "/resume/"  # Point to a custom page
+  # weight = 10
 
   [[menu.main]]
   name = "Blog Posts"
@@ -28,9 +28,28 @@ url = "https://github.com/warrenu"
 [params]
   author.name = "Warren U"
   author.avatar = "images/avatar.jpg"
-  author.intro = "Hi, I'm Warren a Backend/Cloud Specialist"
-  author.description = "I'm looking for a role where I can grow as an engineer while working on impactful, scalable backend systems. Collaboration and mentorship are important to me, and I’m excited to contribute to a team solving challenging, user-focused problems."
+  author.intro = "Hi, I'm Warren"
+  author.description = "A Software Engineer who loves working on systems that grow with users' needs. I thrive in collaborative environments, enjoy learning from others, and get energy from tackling tough challenges that push me to improve."
   goToTop = true
+
+  # Projects configuration
+  [[params.projects]]
+  name = "Project Name 1"
+  description = "A brief description of what this project does and the technologies used."
+  github = "https://github.com/warrenu/placeholder-repo"
+  demo = "https://placeholder-demo.com"
+
+  [[params.projects]]
+  name = "Project Name 2"
+  description = "Another project description highlighting key features and tech stack."
+  github = "https://github.com/warrenu/another-placeholder"
+  demo = "https://another-demo.com"
+
+  [[params.projects]]
+  name = "Project Name 3"
+  description = "A third project showcasing different skills and technologies."
+  github = "https://github.com/warrenu/third-placeholder"
+  # demo = ""  # Optional - omit if no live demo available
 
 [home]
   Title = "Recent Posts"

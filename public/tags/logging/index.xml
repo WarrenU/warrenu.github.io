@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Logging on Warren&#39;s Blog</title>
-    <link>https://warrenu.github.io/tags/logging/</link>
+    <link>http://localhost:1313/tags/logging/</link>
     <description>Recent content in Logging on Warren&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 16 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://warrenu.github.io/tags/logging/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 16 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/logging/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Understanding Logging and Observability in Modern Applications</title>
-      <link>https://warrenu.github.io/posts/2025/01/observability-logging/</link>
+      <link>http://localhost:1313/posts/2025/01/observability-logging/</link>
       <pubDate>Thu, 16 Jan 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://warrenu.github.io/posts/2025/01/observability-logging/</guid>
+      <guid>http://localhost:1313/posts/2025/01/observability-logging/</guid>
       
       <description>&lt;p&gt;Building reliable applications goes beyond writing code that works. As systems grow in complexity, understanding what’s happening inside your application becomes critical. This is where logging and observability come in. In this post, we&amp;rsquo;ll explore these concepts, why they matter, and how you can improve them in your projects.&lt;/p&gt;
 &lt;h2 id=&#34;what-is-logging&#34;&gt;What Is Logging?&lt;/h2&gt;

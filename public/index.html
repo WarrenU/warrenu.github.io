@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en-us"><head><meta charset="utf-8">
+<!DOCTYPE html><html lang="en-us"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta http-equiv="content-type" content="text/html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -17,7 +17,7 @@
 <meta property="og:locale" content="en-us" />
 <meta name="language" content="en-us" />
 
-  <link rel="alternate" hreflang="en" href="https://warrenu.github.io/" title="" />
+  <link rel="alternate" hreflang="en" href="http://localhost:1313/" title="" />
 
 
 
@@ -27,7 +27,7 @@
 <meta name="generator" content="Hugo 0.139.4">
 
     
-    <meta property="og:url" content="https://warrenu.github.io/">
+    <meta property="og:url" content="http://localhost:1313/">
   <meta property="og:site_name" content="Warren&#39;s Blog">
   <meta property="og:title" content="Warren&#39;s Blog">
   <meta property="og:locale" content="en_us">
@@ -42,7 +42,7 @@
 
     
 
-    <link rel="canonical" href="https://warrenu.github.io/">
+    <link rel="canonical" href="http://localhost:1313/">
     <link href="/index.xml" rel="alternate" type="application/rss+xml" title="Warren&#39;s Blog">
     <link href="/index.xml" rel="feed" type="application/rss+xml" title="Warren&#39;s Blog">
     <link href="/style.min.16c30450e4889813e122deeb8ce7a3a05246cbabb09662db22d93993735c043c.css" rel="stylesheet">
@@ -58,7 +58,7 @@
 
 
 
-<link rel="manifest" href="https://warrenu.github.io/site.webmanifest">
+<link rel="manifest" href="http://localhost:1313/site.webmanifest">
 
 <meta name="msapplication-config" content="/browserconfig.xml">
 <meta name="msapplication-TileColor" content="#2d89ef">
@@ -69,15 +69,14 @@
 
     
     
-    
 </head>
 <body data-theme="auto" class="notransition">
 
-<script src="/js/theme.min.8961c317c5b88b953fe27525839672c9343f1058ab044696ca225656c8ba2ab0.js" integrity="sha256-iWHDF8W4i5U/4nUlg5ZyyTQ/EFirBEaWyiJWVsi6KrA="></script>
+<script src="/js/theme.js"></script>
 
 <div class="navbar" role="navigation">
     <nav class="menu" aria-label="Main Navigation">
-        <a href="https://warrenu.github.io/" class="logo">
+        <a href="http://localhost:1313/" class="logo">
             <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" 
 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
 stroke-linejoin="round" class="feather feather-home">
@@ -111,13 +110,6 @@ stroke-linejoin="round" class="feather feather-home">
                     
                 </li>
                 
-                <li>
-                    <a class="menu-link " href="/resume/">
-                        Resume
-                    </a>
-                    
-                </li>
-                
                 <li class="menu-separator">
                     <span>|</span>
                 </li>
@@ -138,22 +130,141 @@ stroke-linejoin="round" class="feather feather-home">
 
 
 <div class="author">
-    
-    
-    
-    <img class="author-avatar" src="/images/avatar_hu1762624924275098256.webp" alt="Warren U" width="957"
-        height="881" />
-    
-    
-    <h2 class="author-name">Hi, I&#39;m Warren a Backend/Cloud Specialist</h2>
-    <p class="author-bio">I&#39;m looking for a role where I can grow as an engineer while working on impactful, scalable backend systems. Collaboration and mentorship are important to me, and I’m excited to contribute to a team solving challenging, user-focused problems.</p>
+    <div class="author-content">
+        
+        <div class="author-avatar-container">
+            
+            
+            <img class="author-avatar" src="/images/avatar_hu426773778123838883.webp" alt="Warren U" width="957"
+                height="881" />
+            
+        </div>
+        
+        <div class="author-text">
+            <h2 class="author-name">Hi, I&#39;m Warren</h2>
+            <p class="author-bio">A Software Engineer who loves working on systems that grow with users&#39; needs. I thrive in collaborative environments, enjoy learning from others, and get energy from tackling tough challenges that push me to improve.</p>
+        </div>
+    </div>
 </div>
 
+<style>
+.author {
+    margin: 2rem 0;
+}
+
+.author-content {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    max-width: 100%;
+}
+
+.author-avatar-container {
+    flex-shrink: 0;
+}
+
+.author-avatar {
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--border-color, #e1e5e9);
+    transition: transform 0.2s ease;
+}
+
+.author-avatar:hover {
+    transform: scale(1.05);
+}
+
+.author-text {
+    flex: 1;
+    min-width: 0;  
+}
+
+.author-name {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin: 0 0 0.75rem 0;
+    color: var(--text-base-color);
+    line-height: 1.2;
+}
+
+.author-bio {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-base-color);
+    margin: 0;
+}
+
+ 
+@media (max-width: 768px) {
+    .author-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .author-avatar-container {
+        order: -1;
+    }
+    
+    .author-text {
+        text-align: center;
+    }
+    
+    .author-name {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .author-content {
+        gap: 0.75rem;
+    }
+    
+    .author-avatar-container svg,
+    .author-avatar {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .author-name {
+        font-size: 1.25rem;
+    }
+    
+    .author-bio {
+        font-size: 0.9rem;
+    }
+}
+
+ 
+@media (prefers-color-scheme: dark) {
+    .author-avatar {
+        border-color: var(--border-color, #333);
+    }
+}
+</style>
+
         <main aria-label="Content">
+            
             <h3 class="posts-item-note" aria-label="Recent Posts">Recent Blog Posts</h3>
             
             
             
+            
+            <article class="post-item">
+    <h4 class="post-item-title">
+        <a href="/posts/2025/09/goroutines-channels-patterns/">Goroutines and Channels Patterns in Go</a>
+    </h4>
+    
+    
+    
+    
+    <time class="post-item-meta" datetime="2025-09-05T00:00:00Z">
+        5 Sep 2025
+        
+    </time>
+</article>
+
             
             <article class="post-item">
     <h4 class="post-item-title">
@@ -215,25 +326,10 @@ stroke-linejoin="round" class="feather feather-home">
 </article>
 
             
-            <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/posts/2024/12/multi-tenancy/">Multitenancy in Django with a Custom ORM</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2024-12-30T00:00:00Z">
-        30 Dec 2024
-        
-    </time>
-</article>
-
-            
             
             <p>
                 
-                <a href="https://warrenu.github.io/posts/"></a>
+                <a href="http://localhost:1313/posts/"></a>
                 
             </p>
             
@@ -273,7 +369,7 @@ stroke-linejoin="round" class="feather feather-home">
 
 
     
-    <script src="https://warrenu.github.io/js/main.min.35f435a5d8eac613c52daa28d8af544a4512337d3e95236e4a4978417b8dcb2f.js" integrity="sha256-NfQ1pdjqxhPFLaoo2K9USkUSM30&#43;lSNuSkl4QXuNyy8="></script>
+    <script async src="http://localhost:1313/js/main.js" ></script>
 
     
 

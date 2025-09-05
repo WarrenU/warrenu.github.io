@@ -2,17 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Golang on Warren&#39;s Blog</title>
-    <link>https://warrenu.github.io/tags/golang/</link>
+    <link>http://localhost:1313/tags/golang/</link>
     <description>Recent content in Golang on Warren&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 29 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://warrenu.github.io/tags/golang/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 05 Sep 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/golang/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Goroutines and Channels Patterns in Go</title>
+      <link>http://localhost:1313/posts/2025/09/goroutines-channels-patterns/</link>
+      <pubDate>Fri, 05 Sep 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/2025/09/goroutines-channels-patterns/</guid>
+      
+      <description>&lt;p&gt;Go&amp;rsquo;s concurrency model is one of its most powerful features. While goroutines and channels seem simple at first, mastering their patterns is crucial for building robust concurrent applications.&lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s explore some patterns by building up a real-world example step by step.&lt;/p&gt;
+&lt;h2 id=&#34;the-challenge-producer-consumer-with-graceful-shutdown&#34;&gt;The Challenge: Producer-Consumer with Graceful Shutdown&lt;/h2&gt;
+&lt;p&gt;Imagine you&amp;rsquo;re building a system where multiple workers produce data and one consumer processes it. You need to handle:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Multiple producers running concurrently&lt;/li&gt;
+&lt;li&gt;Graceful shutdown when interrupted&lt;/li&gt;
+&lt;li&gt;Timeout handling to prevent deadlocks&lt;/li&gt;
+&lt;li&gt;Proper cleanup of resources&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Let&amp;rsquo;s start with the basics and build up to the complete solution.&lt;/p&gt;</description>
+      
+    </item>
+    
     <item>
       <title>Go Favors Composition Over Inheritance</title>
-      <link>https://warrenu.github.io/posts/2025/04/go-composition/</link>
+      <link>http://localhost:1313/posts/2025/04/go-composition/</link>
       <pubDate>Tue, 29 Apr 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://warrenu.github.io/posts/2025/04/go-composition/</guid>
+      <guid>http://localhost:1313/posts/2025/04/go-composition/</guid>
       
       <description>&lt;p&gt;Go doesn’t use traditional inheritance like many OOP languages AND that’s by design.&lt;/p&gt;
 &lt;p&gt;Instead, Go encourages &lt;strong&gt;composition&lt;/strong&gt; and &lt;strong&gt;interfaces&lt;/strong&gt;, which often lead to simpler, more modular code. Here&amp;rsquo;s a quick example:&lt;/p&gt;
@@ -55,10 +76,10 @@
     
     <item>
       <title>System Design for a Go Web App on AWS</title>
-      <link>https://warrenu.github.io/posts/2025/04/system-design/</link>
+      <link>http://localhost:1313/posts/2025/04/system-design/</link>
       <pubDate>Tue, 22 Apr 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://warrenu.github.io/posts/2025/04/system-design/</guid>
+      <guid>http://localhost:1313/posts/2025/04/system-design/</guid>
       
       <description>&lt;h1 id=&#34;a-simple-system-design-for-go-apps-on-aws&#34;&gt;A Simple System Design for Go Apps on AWS&lt;/h1&gt;
 &lt;p&gt;Deploying a Go application on AWS doesn’t have to be complex. In this post, we’ll walk through a simplified system design using common AWS services. If you’re building a basic web API or microservice in Go, this is a solid starting point for going from local development to a cloud deployment.&lt;/p&gt;

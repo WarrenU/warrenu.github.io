@@ -1,0 +1,121 @@
+{{ $avatar_img := .Site.Params.author.avatar }}
+{{ $avatar_img_alt := .Site.Params.author.name }}
+{{ $image := resources.Get $avatar_img }}
+<div class="author">
+    <div class="author-content">
+        {{ with $image }}
+        <div class="author-avatar-container">
+            {{ if eq .MediaType.SubType "svg" }}
+            <svg width="120" height="120" xmlns="http://www.w3.org/2000/svg">
+                <image width="120" height="120" href="{{ $image.RelPermalink }}" />
+            </svg>
+            {{ else }}
+            {{ $image := $image.Fill "120x120 webp" }}
+            <img class="author-avatar" src="{{ $image.RelPermalink }}" alt="{{ $avatar_img_alt }}" width="{{ .Width }}"
+                height="{{ .Height }}" />
+            {{ end }}
+        </div>
+        {{ end }}
+        <div class="author-text">
+            <h2 class="author-name">{{ .Site.Params.author.intro }}</h2>
+            <p class="author-bio">{{ .Site.Params.author.description }}</p>
+        </div>
+    </div>
+</div>
+
+<style>
+.author {
+    margin: 2rem 0;
+}
+
+.author-content {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    max-width: 100%;
+}
+
+.author-avatar-container {
+    flex-shrink: 0;
+}
+
+.author-avatar {
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--border-color, #e1e5e9);
+    transition: transform 0.2s ease;
+}
+
+.author-avatar:hover {
+    transform: scale(1.05);
+}
+
+.author-text {
+    flex: 1;
+    min-width: 0; /* Prevents text overflow */
+}
+
+.author-name {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin: 0 0 0.75rem 0;
+    color: var(--text-base-color);
+    line-height: 1.2;
+}
+
+.author-bio {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-base-color);
+    margin: 0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .author-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .author-avatar-container {
+        order: -1;
+    }
+    
+    .author-text {
+        text-align: center;
+    }
+    
+    .author-name {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .author-content {
+        gap: 0.75rem;
+    }
+    
+    .author-avatar-container svg,
+    .author-avatar {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .author-name {
+        font-size: 1.25rem;
+    }
+    
+    .author-bio {
+        font-size: 0.9rem;
+    }
+}
+
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+    .author-avatar {
+        border-color: var(--border-color, #333);
+    }
+}
+</style>

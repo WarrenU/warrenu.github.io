@@ -2,17 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Warren&#39;s Blog</title>
-    <link>https://warrenu.github.io/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content on Warren&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 29 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://warrenu.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 05 Sep 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Goroutines and Channels Patterns in Go</title>
+      <link>http://localhost:1313/posts/2025/09/goroutines-channels-patterns/</link>
+      <pubDate>Fri, 05 Sep 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/2025/09/goroutines-channels-patterns/</guid>
+      
+      <description>&lt;p&gt;Go&amp;rsquo;s concurrency model is one of its most powerful features. While goroutines and channels seem simple at first, mastering their patterns is crucial for building robust concurrent applications.&lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s explore some patterns by building up a real-world example step by step.&lt;/p&gt;
+&lt;h2 id=&#34;the-challenge-producer-consumer-with-graceful-shutdown&#34;&gt;The Challenge: Producer-Consumer with Graceful Shutdown&lt;/h2&gt;
+&lt;p&gt;Imagine you&amp;rsquo;re building a system where multiple workers produce data and one consumer processes it. You need to handle:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Multiple producers running concurrently&lt;/li&gt;
+&lt;li&gt;Graceful shutdown when interrupted&lt;/li&gt;
+&lt;li&gt;Timeout handling to prevent deadlocks&lt;/li&gt;
+&lt;li&gt;Proper cleanup of resources&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Let&amp;rsquo;s start with the basics and build up to the complete solution.&lt;/p&gt;</description>
+      
+    </item>
+    
     <item>
       <title>Go Favors Composition Over Inheritance</title>
-      <link>https://warrenu.github.io/posts/2025/04/go-composition/</link>
+      <link>http://localhost:1313/posts/2025/04/go-composition/</link>
       <pubDate>Tue, 29 Apr 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://warrenu.github.io/posts/2025/04/go-composition/</guid>
+      <guid>http://localhost:1313/posts/2025/04/go-composition/</guid>
       
       <description>&lt;p&gt;Go doesn’t use traditional inheritance like many OOP languages AND that’s by design.&lt;/p&gt;
 &lt;p&gt;Instead, Go encourages &lt;strong&gt;composition&lt;/strong&gt; and &lt;strong&gt;interfaces&lt;/strong&gt;, which often lead to simpler, more modular code. Here&amp;rsquo;s a quick example:&lt;/p&gt;
@@ -55,10 +76,10 @@
     
     <item>
       <title>System Design for a Go Web App on AWS</title>
-      <link>https://warrenu.github.io/posts/2025/04/system-design/</link>
+      <link>http://localhost:1313/posts/2025/04/system-design/</link>
       <pubDate>Tue, 22 Apr 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://warrenu.github.io/posts/2025/04/system-design/</guid>
+      <guid>http://localhost:1313/posts/2025/04/system-design/</guid>
       
       <description>&lt;h1 id=&#34;a-simple-system-design-for-go-apps-on-aws&#34;&gt;A Simple System Design for Go Apps on AWS&lt;/h1&gt;
 &lt;p&gt;Deploying a Go application on AWS doesn’t have to be complex. In this post, we’ll walk through a simplified system design using common AWS services. If you’re building a basic web API or microservice in Go, this is a solid starting point for going from local development to a cloud deployment.&lt;/p&gt;
@@ -69,10 +90,10 @@
     
     <item>
       <title>Understanding Logging and Observability in Modern Applications</title>
-      <link>https://warrenu.github.io/posts/2025/01/observability-logging/</link>
+      <link>http://localhost:1313/posts/2025/01/observability-logging/</link>
       <pubDate>Thu, 16 Jan 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://warrenu.github.io/posts/2025/01/observability-logging/</guid>
+      <guid>http://localhost:1313/posts/2025/01/observability-logging/</guid>
       
       <description>&lt;p&gt;Building reliable applications goes beyond writing code that works. As systems grow in complexity, understanding what’s happening inside your application becomes critical. This is where logging and observability come in. In this post, we&amp;rsquo;ll explore these concepts, why they matter, and how you can improve them in your projects.&lt;/p&gt;
 &lt;h2 id=&#34;what-is-logging&#34;&gt;What Is Logging?&lt;/h2&gt;
@@ -82,10 +103,10 @@
     
     <item>
       <title>Setting Up a GraphQL API with Golang and GQLGen</title>
-      <link>https://warrenu.github.io/posts/2025/01/graphql-go-gqlgen/</link>
+      <link>http://localhost:1313/posts/2025/01/graphql-go-gqlgen/</link>
       <pubDate>Fri, 10 Jan 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://warrenu.github.io/posts/2025/01/graphql-go-gqlgen/</guid>
+      <guid>http://localhost:1313/posts/2025/01/graphql-go-gqlgen/</guid>
       
       <description>&lt;p&gt;GraphQL is a powerful query language for APIs, and GQLGen makes it easy to build a GraphQL server in Go. In this tutorial, we&amp;rsquo;ll go through the steps to set up a simple GraphQL API using Golang and GQLGen.&lt;/p&gt;
 &lt;h3 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h3&gt;
@@ -106,10 +127,10 @@
     
     <item>
       <title>Multitenancy in Django with a Custom ORM</title>
-      <link>https://warrenu.github.io/posts/2024/12/multi-tenancy/</link>
+      <link>http://localhost:1313/posts/2024/12/multi-tenancy/</link>
       <pubDate>Mon, 30 Dec 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://warrenu.github.io/posts/2024/12/multi-tenancy/</guid>
+      <guid>http://localhost:1313/posts/2024/12/multi-tenancy/</guid>
       
       <description>&lt;p&gt;Managing multitenant applications can be challenging, especially when handling tenant specific data efficiently. I have worked with a solution in Django that made a PostgreSQL database multitenant, leveraging a custom Django ORM implementation. Here’s how it works and why it’s intuitive for developers.&lt;/p&gt;
 &lt;h3 id=&#34;the-multitenancy-challenge&#34;&gt;The Multitenancy Challenge&lt;/h3&gt;
@@ -119,10 +140,10 @@
     
     <item>
       <title>DynamoDB - Data Fragmentation</title>
-      <link>https://warrenu.github.io/posts/2024/12/dynamodb-data-fragmentation/</link>
+      <link>http://localhost:1313/posts/2024/12/dynamodb-data-fragmentation/</link>
       <pubDate>Mon, 23 Dec 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://warrenu.github.io/posts/2024/12/dynamodb-data-fragmentation/</guid>
+      <guid>http://localhost:1313/posts/2024/12/dynamodb-data-fragmentation/</guid>
       
       <description>&lt;h3 id=&#34;understanding-dynamodb-fragmentation-a-simple-use-case&#34;&gt;Understanding DynamoDB Fragmentation: A Simple Use Case&lt;/h3&gt;
 &lt;p&gt;When working with Amazon DynamoDB, fragmentation refers to the inefficient use of storage over time as data is inserted, updated, and deleted. This can impact performance and increase costs. Let&amp;rsquo;s break it down with a simple use case.&lt;/p&gt;
@@ -133,10 +154,10 @@
     
     <item>
       <title>6 Quick Tips for Remote Work Success</title>
-      <link>https://warrenu.github.io/posts/2024/12/remote-working/</link>
+      <link>http://localhost:1313/posts/2024/12/remote-working/</link>
       <pubDate>Thu, 19 Dec 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://warrenu.github.io/posts/2024/12/remote-working/</guid>
+      <guid>http://localhost:1313/posts/2024/12/remote-working/</guid>
       
       <description>&lt;h3 id=&#34;6-quick-tips-for-remote-work-success&#34;&gt;6 Quick Tips for Remote Work Success&lt;/h3&gt;
 &lt;p&gt;Remote work is on the rise, but it’s not the same as working in the office. Here’s how to stay productive, balanced, and effective.&lt;/p&gt;
@@ -149,10 +170,10 @@
     
     <item>
       <title>Lessons Learned from a Cascade Deletion Incident</title>
-      <link>https://warrenu.github.io/posts/2024/12/cascade-del/</link>
+      <link>http://localhost:1313/posts/2024/12/cascade-del/</link>
       <pubDate>Thu, 19 Dec 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://warrenu.github.io/posts/2024/12/cascade-del/</guid>
+      <guid>http://localhost:1313/posts/2024/12/cascade-del/</guid>
       
       <description>&lt;h3 id=&#34;setting-the-scene&#34;&gt;Setting the Scene&lt;/h3&gt;
 &lt;p&gt;One evening, a project manager reached out to inform me that some data appeared to be missing from our system. Upon investigating, I discovered that an unintended cascade deletion had occurred due to the use of &lt;code&gt;on_delete=models.CASCADE&lt;/code&gt;. This resulted in the deletion of not only the target data but also several related records, which were critical to the system&amp;rsquo;s integrity.&lt;/p&gt;
@@ -176,23 +197,12 @@
     
     <item>
       <title>About Me</title>
-      <link>https://warrenu.github.io/about/</link>
+      <link>http://localhost:1313/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://warrenu.github.io/about/</guid>
+      <guid>http://localhost:1313/about/</guid>
       
-      <description>&lt;p&gt;Hi, I’m Warren, and I’m a backend engineer who loves building things that work well, scale smoothly, and make people’s lives easier. Over the past eight years, I’ve worked on a mix of exciting projects where I’ve used tools like Go, Python, AWS, and GraphQL to create reliable and efficient systems. I really enjoy the challenge of solving tough problems and always learning something new, whether that’s diving into a new tech stack or finding better ways to optimize code. What excites me most is working with people who are just as passionate about solving problems as I am, and I always look forward to learning and growing from those experiences.&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Resume</title>
-      <link>https://warrenu.github.io/resume/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://warrenu.github.io/resume/</guid>
-      
-      <description></description>
+      <description>&lt;p&gt;I’m Warren Urbina, a Software Engineer with 8 years of experience building and improving backend systems. I’ve created scheduling tools that made life easier for students, integrated new products into existing platforms to expand what teams could offer, and built secure payment systems that handled heavy traffic without breaking a sweat. I’ve also worked on scaling services with modern frameworks and cloud tools so they could grow right alongside the business.&lt;/p&gt;</description>
       
     </item>
     
