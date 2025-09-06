@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Concurrency on Warren&#39;s Blog</title>
-    <link>http://localhost:1313/tags/concurrency/</link>
+    <link>https://warrenu.github.io/tags/concurrency/</link>
     <description>Recent content in Concurrency on Warren&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 05 Sep 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/concurrency/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 05 Sep 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://warrenu.github.io/tags/concurrency/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Goroutines and Channels Patterns in Go</title>
-      <link>http://localhost:1313/posts/2025/09/goroutines-channels-patterns/</link>
+      <link>https://warrenu.github.io/posts/2025/09/goroutines-channels-patterns/</link>
       <pubDate>Fri, 05 Sep 2025 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/posts/2025/09/goroutines-channels-patterns/</guid>
+      <guid>https://warrenu.github.io/posts/2025/09/goroutines-channels-patterns/</guid>
       
       <description>&lt;p&gt;Go&amp;rsquo;s concurrency model is one of its most powerful features. While goroutines and channels seem simple at first, mastering their patterns is crucial for building robust concurrent applications.&lt;/p&gt;
 &lt;p&gt;Let&amp;rsquo;s explore some patterns by building up a real-world example step by step.&lt;/p&gt;

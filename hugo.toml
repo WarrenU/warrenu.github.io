@@ -34,22 +34,12 @@ url = "https://github.com/warrenu"
 
   # Projects configuration
   [[params.projects]]
-  name = "Project Name 1"
-  description = "A brief description of what this project does and the technologies used."
-  github = "https://github.com/warrenu/placeholder-repo"
-  demo = "https://placeholder-demo.com"
+  name = "Pokemon Card Viewer"
+  description = "React project, in AWS S3 that allows you to look up and view pokemon cards."
+  github = "https://github.com/warrenu/pokemon-card-viewer"
+  terraform = "https://github.com/warrenu/pokemon-card-viewer-terraform"
+  demo = "http://pokemon-card-viewer-an8g8rr7.s3-website-us-east-1.amazonaws.com"
 
-  [[params.projects]]
-  name = "Project Name 2"
-  description = "Another project description highlighting key features and tech stack."
-  github = "https://github.com/warrenu/another-placeholder"
-  demo = "https://another-demo.com"
-
-  [[params.projects]]
-  name = "Project Name 3"
-  description = "A third project showcasing different skills and technologies."
-  github = "https://github.com/warrenu/third-placeholder"
-  # demo = ""  # Optional - omit if no live demo available
 
 [home]
   Title = "Recent Posts"
