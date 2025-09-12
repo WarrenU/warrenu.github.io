@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Productivity on Warren&#39;s Blog</title>
-    <link>https://warrenu.github.io/tags/productivity/</link>
+    <link>http://localhost:1313/tags/productivity/</link>
     <description>Recent content in Productivity on Warren&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 19 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://warrenu.github.io/tags/productivity/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 19 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/productivity/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>6 Quick Tips for Remote Work Success</title>
-      <link>https://warrenu.github.io/posts/2024/12/remote-working/</link>
+      <link>http://localhost:1313/posts/2024/12/remote-working/</link>
       <pubDate>Thu, 19 Dec 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://warrenu.github.io/posts/2024/12/remote-working/</guid>
+      <guid>http://localhost:1313/posts/2024/12/remote-working/</guid>
       
       <description>&lt;h3 id=&#34;6-quick-tips-for-remote-work-success&#34;&gt;6 Quick Tips for Remote Work Success&lt;/h3&gt;
 &lt;p&gt;Remote work is on the rise, but it’s not the same as working in the office. Here’s how to stay productive, balanced, and effective.&lt;/p&gt;

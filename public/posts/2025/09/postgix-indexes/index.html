@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en-us"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="content-type" content="text/html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title itemprop="name">Speeding Up Geospatial Queries with PostGIS GiST Indexes | Warren&#39;s Blog</title>
+<meta property="og:title" content="Speeding Up Geospatial Queries with PostGIS GiST Indexes | Warren&#39;s Blog" />
+<meta name="twitter:title" content="Speeding Up Geospatial Queries with PostGIS GiST Indexes | Warren&#39;s Blog" />
+<meta itemprop="name" content="Speeding Up Geospatial Queries with PostGIS GiST Indexes | Warren&#39;s Blog" />
+<meta name="application-name" content="Speeding Up Geospatial Queries with PostGIS GiST Indexes | Warren&#39;s Blog" />
+<meta property="og:site_name" content="" />
+
+<meta name="description" content="">
+<meta itemprop="description" content="" />
+<meta property="og:description" content="" />
+<meta name="twitter:description" content="" />
+
+<meta property="og:locale" content="en-us" />
+<meta name="language" content="en-us" />
+
+  <link rel="alternate" hreflang="en" href="http://localhost:1313/posts/2025/09/postgix-indexes/" title="" />
+
+
+
+
+
+    
+    
+    
+
+    <meta property="og:type" content="article" />
+    <meta property="og:article:published_time" content=2025-09-12T07:00:00-0700 />
+    <meta property="article:published_time" content=2025-09-12T07:00:00-0700 />
+    <meta property="og:url" content="http://localhost:1313/posts/2025/09/postgix-indexes/" />
+
+    
+    <meta property="og:article:author" content="Warren U" />
+    <meta property="article:author" content="Warren U" />
+    <meta name="author" content="Warren U" />
+    
+    
+
+    
+
+    <script defer type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "headline": "Speeding Up Geospatial Queries with PostGIS GiST Indexes",
+        "author": {
+        "@type": "Person",
+        "name": ""
+        },
+        "datePublished": "2025-09-12",
+        "description": "",
+        "wordCount":  367 ,
+        "mainEntityOfPage": "True",
+        "dateModified": "2025-09-12",
+        "image": {
+        "@type": "imageObject",
+        "url": ""
+        },
+        "publisher": {
+        "@type": "Organization",
+        "name": "Warren\u0027s Blog"
+        }
+    }
+    </script>
+
+
+<meta name="generator" content="Hugo 0.139.4">
+
+    
+    <meta property="og:url" content="http://localhost:1313/posts/2025/09/postgix-indexes/">
+  <meta property="og:site_name" content="Warren&#39;s Blog">
+  <meta property="og:title" content="Speeding Up Geospatial Queries with PostGIS GiST Indexes">
+  <meta property="og:description" content="When working with geospatial data, performance can get slow as your dataset grows. PostGIS provides a tool to make these queries fast: the GiST index.
+Example Problem Suppose you have weather stations (points) and city boundaries (polygons). You want to find which stations are inside a city:
+SELECT s.id FROM stations s JOIN cities c ON ST_Within(s.location, c.boundary) WHERE c.id = 42; Without an index, Postgres must check every row, which is slow for millions of stations.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-09-12T07:00:00-07:00">
+    <meta property="article:modified_time" content="2025-09-12T07:00:00-07:00">
+
+
+    
+    
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Speeding Up Geospatial Queries with PostGIS GiST Indexes">
+  <meta name="twitter:description" content="When working with geospatial data, performance can get slow as your dataset grows. PostGIS provides a tool to make these queries fast: the GiST index.
+Example Problem Suppose you have weather stations (points) and city boundaries (polygons). You want to find which stations are inside a city:
+SELECT s.id FROM stations s JOIN cities c ON ST_Within(s.location, c.boundary) WHERE c.id = 42; Without an index, Postgres must check every row, which is slow for millions of stations.">
+
+
+    
+
+    <link rel="canonical" href="http://localhost:1313/posts/2025/09/postgix-indexes/">
+    <link href="/style.min.16c30450e4889813e122deeb8ce7a3a05246cbabb09662db22d93993735c043c.css" rel="stylesheet">
+    <link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
+
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+
+
+
+<link rel="manifest" href="http://localhost:1313/site.webmanifest">
+
+<meta name="msapplication-config" content="/browserconfig.xml">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#434648">
+
+    
+    <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg">
+
+    
+    
+</head>
+<body data-theme = "" class="notransition">
+
+<script src="/js/theme.js"></script>
+
+<div class="navbar" role="navigation">
+    <nav class="menu" aria-label="Main Navigation">
+        <a href="http://localhost:1313/" class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" 
+viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
+stroke-linejoin="round" class="feather feather-home">
+<title></title>
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg>
+        </a>
+        <input type="checkbox" id="menu-trigger" class="menu-trigger" />
+        <label for="menu-trigger">
+            <span class="menu-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" stroke="currentColor" fill="none" viewBox="0 0 14 14"><title>Menu</title><path stroke-linecap="round" stroke-linejoin="round" d="M10.595 7L3.40726 7"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 3.51488L3.49301 3.51488"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 10.4851H3.49301"></path><path stroke-linecap="round" stroke-linejoin="round" d="M0.5 12.5V1.5C0.5 0.947715 0.947715 0.5 1.5 0.5H12.5C13.0523 0.5 13.5 0.947715 13.5 1.5V12.5C13.5 13.0523 13.0523 13.5 12.5 13.5H1.5C0.947715 13.5 0.5 13.0523 0.5 12.5Z"></path></svg>
+            </span>
+        </label>
+
+        <div class="trigger">
+            <ul class="trigger-container">
+                
+                
+                <li>
+                    <a class="menu-link " href="/about">
+                        About Me
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link " href="/posts/">
+                        Blog Posts
+                    </a>
+                    
+                </li>
+                
+                <li class="menu-separator">
+                    <span>|</span>
+                </li>
+                
+                
+            </ul>
+            <a id="mode" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-sunny" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>LIGHT</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-moon" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>DARK</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+            </a>
+        </div>
+    </nav>
+</div>
+
+<div class="wrapper post">
+    <main class="page-content" aria-label="Content">
+        <article>
+            <header class="header">
+                <h1 class="header-title">Speeding Up Geospatial Queries with PostGIS GiST Indexes</h1>
+                
+                
+                
+                <div class="post-meta">
+                    <time datetime="2025-09-12T07:00:00-07:00" itemprop="datePublished"> Sep 12, 2025 </time>
+                </div>
+                
+            </header>
+            
+            <div class="page-content">
+                <hr>
+<p>When working with geospatial data, performance can get slow as your dataset grows. PostGIS provides a tool to make these queries fast: the <strong>GiST index</strong>.</p>
+<h3 id="example-problem">Example Problem</h3>
+<p>Suppose you have <strong>weather stations</strong> (points) and <strong>city boundaries</strong> (polygons). You want to find which stations are inside a city:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> s.id
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> stations s
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">JOIN</span> cities <span style="color:#66d9ef">c</span> <span style="color:#66d9ef">ON</span> ST_Within(s.<span style="color:#66d9ef">location</span>, <span style="color:#66d9ef">c</span>.boundary)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">WHERE</span> <span style="color:#66d9ef">c</span>.id <span style="color:#f92672">=</span> <span style="color:#ae81ff">42</span>;
+</span></span></code></pre></div><p>Without an index, Postgres must check every row, which is slow for millions of stations.</p>
+<h3 id="using-gist-indexes">Using GiST Indexes</h3>
+<p>A GiST index stores bounding boxes for geometries. Postgres first checks which bounding boxes overlap (fast), then runs the exact <code>ST_Within</code> check on a smaller set.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">INDEX</span> idx_cities_boundary <span style="color:#66d9ef">ON</span> cities <span style="color:#66d9ef">USING</span> GIST (boundary);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">INDEX</span> idx_stations_location <span style="color:#66d9ef">ON</span> stations <span style="color:#66d9ef">USING</span> GIST (<span style="color:#66d9ef">location</span>);
+</span></span></code></pre></div><h3 id="measuring-performance">Measuring Performance</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">EXPLAIN</span> <span style="color:#66d9ef">ANALYZE</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> s.id
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> stations s
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">JOIN</span> cities <span style="color:#66d9ef">c</span> <span style="color:#66d9ef">ON</span> ST_Within(s.<span style="color:#66d9ef">location</span>, <span style="color:#66d9ef">c</span>.boundary)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">WHERE</span> <span style="color:#66d9ef">c</span>.id <span style="color:#f92672">=</span> <span style="color:#ae81ff">42</span>;
+</span></span></code></pre></div><p>Before adding an index, using <code>EXPLAIN ANALYZE</code> might produce output like this:</p>
+<pre tabindex="0"><code>Seq Scan on stations s  (cost=0.00..13456.00 rows=1000 width=16) (actual time=0.015..3450.320 rows=1024 loops=1)
+  Join Filter: ST_Within(s.location, c.boundary)
+Planning Time: 0.125 ms
+Execution Time: 3450.400 ms
+</code></pre><p>After adding a GiST index, the same query might produce output like:</p>
+<pre tabindex="0"><code>Bitmap Heap Scan on stations s  (cost=4.25..45.75 rows=1024 width=16) (actual time=0.023..15.450 rows=1024 loops=1)
+  Recheck Cond: (s.location &amp;&amp; c.boundary)
+  -&gt;  Bitmap Index Scan on idx_stations_location  (cost=0.00..4.20 rows=1024 width=0) (actual time=0.018..0.018 rows=1024 loops=1)
+Planning Time: 0.210 ms
+Execution Time: 15.500 ms
+</code></pre><p>You can see the dramatic reduction in execution time from <strong>~3.4 seconds</strong> to <strong>~15 milliseconds</strong>.</p>
+<h3 id="maintenance">Maintenance</h3>
+<p>GiST indexes require maintenance to stay efficient:</p>
+<ul>
+<li>
+<p><strong>VACUUM ANALYZE:</strong> Reclaims space from deleted or updated rows and updates planner statistics.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">VACUUM</span> <span style="color:#66d9ef">ANALYZE</span> stations;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">VACUUM</span> <span style="color:#66d9ef">ANALYZE</span> cities;
+</span></span></code></pre></div></li>
+<li>
+<p><strong>REINDEX:</strong> Over time, especially with lots of updates, GiST indexes can become bloated. Rebuilding them keeps performance optimal.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">REINDEX</span> <span style="color:#66d9ef">INDEX</span> idx_stations_location;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">REINDEX</span> <span style="color:#66d9ef">INDEX</span> idx_cities_boundary;
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Maintenance Best Practices:</strong> Run <code>VACUUM ANALYZE</code> and <code>REINDEX</code> periodically via scripts or as part of your deployment or migration process. This ensures indexes remain healthy and query performance stays consistent over time.</p>
+</li>
+</ul>
+<h3 id="benefits">Benefits</h3>
+<ul>
+<li><strong>Faster queries:</strong> Milliseconds instead of seconds.</li>
+<li><strong>Lower DB load:</strong> Can handle more users.</li>
+<li><strong>Simpler code:</strong> No manual filtering needed.</li>
+</ul>
+<p>GiST indexes with <code>ST_Within</code> are a simple, effective way to scale geospatial queries in Postgres, and regular maintenance keeps performance reliable.</p>
+
+            </div>
+        </article></main>
+</div>
+<footer class="footer">
+    <span class="footer_item"> </span>
+    &nbsp;
+
+    <div class="footer_social-icons">
+<a href="https://github.com/warrenu" target="_blank" rel="noopener noreferrer me"
+    title="Github">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+    </path>
+</svg>
+</a>
+</div>
+    <small class="footer_copyright">
+        © 2025 Warren U.
+        
+    </small>
+</footer><a href="#" title="" id="totop">
+    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" stroke="currentColor" viewBox="0 96 960 960">
+    <path d="M283 704.739 234.261 656 480 410.261 725.739 656 677 704.739l-197-197-197 197Z"/>
+</svg>
+
+</a>
+
+
+    
+
+
+
+
+
+
+    
+    <script async src="http://localhost:1313/js/main.js" ></script>
+
+    
+
+</body>
+</html>

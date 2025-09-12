@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>[PostGIS, Database, Geospatial] on Warren&#39;s Blog</title>
+    <link>http://localhost:1313/categories/postgis-database-geospatial/</link>
+    <description>Recent content in [PostGIS, Database, Geospatial] on Warren&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 12 Sep 2025 07:00:00 -0700</lastBuildDate><atom:link href="http://localhost:1313/categories/postgis-database-geospatial/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Speeding Up Geospatial Queries with PostGIS GiST Indexes</title>
+      <link>http://localhost:1313/posts/2025/09/postgix-indexes/</link>
+      <pubDate>Fri, 12 Sep 2025 07:00:00 -0700</pubDate>
+      
+      <guid>http://localhost:1313/posts/2025/09/postgix-indexes/</guid>
+      
+      <description>&lt;hr&gt;
+&lt;p&gt;When working with geospatial data, performance can get slow as your dataset grows. PostGIS provides a tool to make these queries fast: the &lt;strong&gt;GiST index&lt;/strong&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;example-problem&#34;&gt;Example Problem&lt;/h3&gt;
+&lt;p&gt;Suppose you have &lt;strong&gt;weather stations&lt;/strong&gt; (points) and &lt;strong&gt;city boundaries&lt;/strong&gt; (polygons). You want to find which stations are inside a city:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;SELECT&lt;/span&gt; s.id
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;FROM&lt;/span&gt; stations s
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;JOIN&lt;/span&gt; cities &lt;span style=&#34;color:#66d9ef&#34;&gt;c&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;ON&lt;/span&gt; ST_Within(s.&lt;span style=&#34;color:#66d9ef&#34;&gt;location&lt;/span&gt;, &lt;span style=&#34;color:#66d9ef&#34;&gt;c&lt;/span&gt;.boundary)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;WHERE&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;c&lt;/span&gt;.id &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;42&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Without an index, Postgres must check every row, which is slow for millions of stations.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

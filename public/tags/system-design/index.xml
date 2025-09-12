@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>System Design on Warren&#39;s Blog</title>
-    <link>https://warrenu.github.io/tags/system-design/</link>
+    <link>http://localhost:1313/tags/system-design/</link>
     <description>Recent content in System Design on Warren&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 22 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://warrenu.github.io/tags/system-design/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 22 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/system-design/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>System Design for a Go Web App on AWS</title>
-      <link>https://warrenu.github.io/posts/2025/04/system-design/</link>
+      <link>http://localhost:1313/posts/2025/04/system-design/</link>
       <pubDate>Tue, 22 Apr 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://warrenu.github.io/posts/2025/04/system-design/</guid>
+      <guid>http://localhost:1313/posts/2025/04/system-design/</guid>
       
       <description>&lt;h1 id=&#34;a-simple-system-design-for-go-apps-on-aws&#34;&gt;A Simple System Design for Go Apps on AWS&lt;/h1&gt;
 &lt;p&gt;Deploying a Go application on AWS doesn’t have to be complex. In this post, we’ll walk through a simplified system design using common AWS services. If you’re building a basic web API or microservice in Go, this is a solid starting point for going from local development to a cloud deployment.&lt;/p&gt;

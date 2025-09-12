@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Django on Warren&#39;s Blog</title>
-    <link>https://warrenu.github.io/tags/django/</link>
+    <link>http://localhost:1313/tags/django/</link>
     <description>Recent content in Django on Warren&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 19 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://warrenu.github.io/tags/django/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 19 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/django/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Lessons Learned from a Cascade Deletion Incident</title>
-      <link>https://warrenu.github.io/posts/2024/12/cascade-del/</link>
+      <link>http://localhost:1313/posts/2024/12/cascade-del/</link>
       <pubDate>Thu, 19 Dec 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://warrenu.github.io/posts/2024/12/cascade-del/</guid>
+      <guid>http://localhost:1313/posts/2024/12/cascade-del/</guid>
       
       <description>&lt;h3 id=&#34;setting-the-scene&#34;&gt;Setting the Scene&lt;/h3&gt;
 &lt;p&gt;One evening, a project manager reached out to inform me that some data appeared to be missing from our system. Upon investigating, I discovered that an unintended cascade deletion had occurred due to the use of &lt;code&gt;on_delete=models.CASCADE&lt;/code&gt;. This resulted in the deletion of not only the target data but also several related records, which were critical to the system&amp;rsquo;s integrity.&lt;/p&gt;
